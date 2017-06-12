@@ -4,7 +4,13 @@ if ($db =@mysql_connect ("127.0.0.1","Student","1111"))
 {
 	mysql_select_db("college");
 	mysql_query("SET NAMES UTF8");
+<<<<<<< HEAD
 	$res = mysql_query("select students.surname, students.name, students.patronym, students.number, groups.group from students inner join groups on students.group = groups.group_id where (surname like '%$_GET[surname]%')and number like '%$_GET[number]%';");
+=======
+	$res = mysql_query("select students.surname, students.name, 
+	students.patronym, groups.group from students inner join groups on 
+	students.group_id = groups.group_id where (surname like '$_GET[surname]');");
+>>>>>>> 5cb995885bf392133a9fb44724fb8ab3a4f60783
 	$coll = mysql_num_rows($res);
 	if ($coll == 0)
 	{ echo "<div align = \"center\">Неправильно указаны данные</div><br>";
